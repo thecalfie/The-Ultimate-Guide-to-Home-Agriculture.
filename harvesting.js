@@ -5,9 +5,62 @@ document.addEventListener("DOMContentLoaded", function() {
     const plantingGuideElement = document.getElementById("plantingGuide");
 
     const HarvestListUpdated = {
-        "January": { vegetables: [], fruits: [] },
-        "February": { vegetables: [], fruits: [] },
-        "March": { vegetables: [], fruits: [] },
+         "January": {
+            vegetables: [
+                { name: "Beetroot", reason: "Harvest as they mature, typically in the summer." },
+                { name: "Carrots", reason: "Harvest when they reach a desirable size, usually mid-summer." },
+                { name: "Cucumbers", reason: "Best harvested when they are firm and before they become overripe." },
+                { name: "Green beans", reason: "Harvest regularly for continuous production." },
+                { name: "Lettuce", reason: "Harvest as heads reach full size or leaves are tender." },
+                { name: "Radishes", reason: "Harvest when they reach full size; they mature quickly." },
+                { name: "Swiss chard", reason: "Harvest outer leaves to encourage continued growth." },
+                { name: "Tomatoes", reason: "Harvest when they are fully colored and firm." },
+                { name: "Aubergine (Eggplant)", reason: "Harvest when fruits are glossy and firm." },
+                { name: "Bell peppers", reason: "Harvest when they reach full size and color." }
+            ],
+            fruits: [
+                { name: "Melons (Watermelon, Cantaloupe)", reason: "Harvest when the fruit sounds hollow and the rind changes color." },
+                { name: "Pineapples", reason: "Harvest when they are fully ripe and have a sweet aroma." }
+            ]
+        },
+        "February": {
+            vegetables: [
+                { name: "Beetroot", reason: "Continue harvesting as they mature." },
+                { name: "Carrots", reason: "Harvest when they are of good size." },
+                { name: "Cucumbers", reason: "Continue harvesting for best quality." },
+                { name: "Green beans", reason: "Harvest regularly." },
+                { name: "Lettuce", reason: "Harvest as needed." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." },
+                { name: "Tomatoes", reason: "Harvest when ripe." },
+                { name: "Aubergine (Eggplant)", reason: "Harvest when firm." },
+                { name: "Bell peppers", reason: "Harvest when ripe." }
+            ],
+            fruits: [
+                { name: "Melons (Watermelon, Cantaloupe)", reason: "Continue harvesting as they ripen." },
+                { name: "Pineapples", reason: "Harvest when ripe." },
+                { name: "Strawberries", reason: "Harvest when fully red and sweet." }
+            ]
+        },
+        "March": {
+            vegetables: [
+                { name: "Beetroot", reason: "Harvest as they mature." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cucumbers", reason: "Harvest before they become overripe." },
+                { name: "Green beans", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Harvest as needed." },
+                { name: "Radishes", reason: "Harvest when mature." },
+                { name: "Swiss chard", reason: "Continue harvesting outer leaves." },
+                { name: "Tomatoes", reason: "Harvest when ripe." },
+                { name: "Aubergine (Eggplant)", reason: "Harvest when firm." },
+                { name: "Bell peppers", reason: "Harvest when ripe." }
+            ],
+            fruits: [
+                { name: "Melons (Watermelon, Cantaloupe)", reason: "Harvest when ripe." },
+                { name: "Pineapples", reason: "Continue harvesting." },
+                { name: "Strawberries", reason: "Harvest regularly as they ripen." }
+            ]
+        },
         "April": {
             vegetables: [
                 { name: "Asparagus", reason: "Harvest the spears before they become too tall." },
