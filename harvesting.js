@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentMonthElement = document.getElementById("currentMonth");
     const plantingGuideElement = document.getElementById("plantingGuide");
 
+
     const HarvestListUpdated = {
-         "January": {
+        "January": {
             vegetables: [
                 { name: "Beetroot", reason: "Harvest as they mature, typically in the summer." },
                 { name: "Carrots", reason: "Harvest when they reach a desirable size, usually mid-summer." },
@@ -63,152 +64,189 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "April": {
             vegetables: [
-                { name: "Asparagus", reason: "Harvest the spears before they become too tall." },
-                { name: "Lettuce", reason: "Harvest leaves before they become too mature." }
+                { name: "Beetroot", reason: "Harvest as they mature." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cucumbers", reason: "Last harvests before winter." },
+                { name: "Green beans", reason: "Final harvests before cooler weather." },
+                { name: "Lettuce", reason: "Continue harvesting." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." },
+                { name: "Tomatoes", reason: "Harvest before frost hits." },
+                { name: "Aubergine (Eggplant)", reason: "Harvest if still producing." },
+                { name: "Bell peppers", reason: "Harvest before frost." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Peak season for harvest." },
+                { name: "Strawberries", reason: "Continue harvesting if still fruiting." }
             ]
         },
         "May": {
             vegetables: [
-                { name: "Asparagus", reason: "Continue harvesting." },
-                { name: "Lettuce", reason: "Continue harvesting." }
+                { name: "Beetroot", reason: "Continue harvesting." },
+                { name: "Carrots", reason: "Harvest as needed." },
+                { name: "Garlic", reason: "Harvest when leaves yellow and dry." },
+                { name: "Kale", reason: "Harvest leaves as needed." },
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Continue harvesting." },
+                { name: "Onions", reason: "Harvest when tops start to fall and dry." },
+                { name: "Peas", reason: "Final harvests before winter." },
+                { name: "Radishes", reason: "Continue harvesting." },
+                { name: "Spinach", reason: "Harvest as needed." },
+                { name: "Swiss chard", reason: "Continue harvesting outer leaves." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." },
+                { name: "Strawberries", reason: "Harvest if still producing." }
             ]
         },
         "June": {
             vegetables: [
                 { name: "Beetroot", reason: "Harvest as needed." },
-                { name: "Broccoli", reason: "Harvest heads." },
-                { name: "Brussels sprouts", reason: "Harvest as needed." },
-                { name: "Cabbage", reason: "Harvest heads." },
-                { name: "Carrots", reason: "Harvest as needed." },
-                { name: "Cauliflower", reason: "Harvest heads." },
-                { name: "Garlic", reason: "Harvest when bulbs are mature." },
-                { name: "Kale", reason: "Harvest leaves." },
-                { name: "Leeks", reason: "Harvest as needed." },
-                { name: "Lettuce", reason: "Harvest leaves." },
-                { name: "Onions", reason: "Harvest bulbs." },
-                { name: "Peas", reason: "Harvest pods." },
-                { name: "Radishes", reason: "Harvest as needed." },
-                { name: "Spinach", reason: "Harvest leaves." },
-                { name: "Swiss chard", reason: "Harvest outer leaves." }
+                { name: "Broccoli", reason: "Harvest when heads are firm and tight." },
+                { name: "Brussels sprouts", reason: "Harvest as they mature, often after frost." },
+                { name: "Cabbage", reason: "Harvest heads when they are firm." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest when heads are compact." },
+                { name: "Garlic", reason: "Continue harvesting." },
+                { name: "Kale", reason: "Harvest leaves as needed." },
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Harvest if grown in a cool-season variety." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Final harvest before severe cold." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Spinach", reason: "Harvest as needed." },
+                { name: "Swiss chard", reason: "Continue harvesting outer leaves." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Peak season for harvest." },
+                { name: "Strawberries", reason: "If grown in protected conditions, continue harvesting." }
             ]
         },
         "July": {
             vegetables: [
-                { name: "Beetroot", reason: "Harvest as needed." },
-                { name: "Broccoli", reason: "Harvest heads." },
-                { name: "Brussels sprouts", reason: "Harvest as needed." },
-                { name: "Cabbage", reason: "Harvest heads." },
-                { name: "Carrots", reason: "Harvest as needed." },
-                { name: "Cauliflower", reason: "Harvest heads." },
-                { name: "Garlic", reason: "Harvest when bulbs are mature." },
-                { name: "Kale", reason: "Harvest leaves." },
-                { name: "Leeks", reason: "Harvest as needed." },
-                { name: "Lettuce", reason: "Harvest leaves." },
-                { name: "Onions", reason: "Harvest bulbs." },
-                { name: "Peas", reason: "Harvest pods." },
-                { name: "Radishes", reason: "Harvest as needed." },
-                { name: "Spinach", reason: "Harvest leaves." },
-                { name: "Swiss chard", reason: "Harvest outer leaves." }
-            ],
-            fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
-            ]
-        },
-        "August": {
-            vegetables: [
                 { name: "Beetroot", reason: "Harvest as they mature." },
                 { name: "Broccoli", reason: "Continue harvesting." },
-                { name: "Brussels sprouts", reason: "Harvest as needed." },
-                { name: "Cabbage", reason: "Continue harvesting heads." },
+                { name: "Brussels sprouts", reason: "Harvest as they mature." },
+                { name: "Cabbage", reason: "Harvest heads." },
                 { name: "Carrots", reason: "Continue harvesting." },
                 { name: "Cauliflower", reason: "Harvest when heads are tight." },
-                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Garlic", reason: "Continue harvesting." },
                 { name: "Kale", reason: "Harvest leaves as needed." },
                 { name: "Leeks", reason: "Harvest as they mature." },
                 { name: "Lettuce", reason: "Harvest cool-season varieties." },
                 { name: "Onions", reason: "Continue harvesting." },
-                { name: "Peas", reason: "Harvest if still producing." },
+                { name: "Peas", reason: "Harvest early varieties." },
                 { name: "Radishes", reason: "Harvest as they mature." },
                 { name: "Spinach", reason: "Continue harvesting." },
                 { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Peak harvest season." },
+                { name: "Strawberries", reason: "Continue harvesting if in a protected environment." }
+            ]
+        },
+        "August": {
+            vegetables: [
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Continue harvesting." },
+                { name: "Brussels sprouts", reason: "Harvest as they mature." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest when compact." },
+                { name: "Garlic", reason: "Continue harvesting." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Harvest cool-season varieties." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Harvest early varieties." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Spinach", reason: "Harvest as needed." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
+            ],
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." },
+                { name: "Strawberries", reason: "Continue harvesting if in a protected environment." }
             ]
         },
         "September": {
             vegetables: [
-                { name: "Beetroot", reason: "Continue harvesting." },
-                { name: "Broccoli", reason: "Harvest heads." },
-                { name: "Brussels sprouts", reason: "Continue harvesting." },
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Continue harvesting." },
+                { name: "Brussels sprouts", reason: "Harvest as they mature." },
                 { name: "Cabbage", reason: "Harvest heads." },
                 { name: "Carrots", reason: "Continue harvesting." },
-                { name: "Cauliflower", reason: "Harvest heads." },
-                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Cauliflower", reason: "Harvest when compact." },
+                { name: "Garlic", reason: "Harvest as needed." },
                 { name: "Kale", reason: "Harvest leaves." },
-                { name: "Leeks", reason: "Continue harvesting." },
+                { name: "Leeks", reason: "Harvest as they mature." },
                 { name: "Lettuce", reason: "Harvest cool-season varieties." },
                 { name: "Onions", reason: "Continue harvesting." },
-                { name: "Peas", reason: "Harvest if still producing." },
-                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Peas", reason: "Harvest early varieties." },
+                { name: "Radishes", reason: "Harvest as they mature." },
                 { name: "Spinach", reason: "Continue harvesting." },
-                { name: "Swiss chard", reason: "Harvest outer leaves." }
+                { name: "Swiss chard", reason: "Harvest outer leaves." },
+                { name: "Potatoes", reason: "Harvest when tops start to die back." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Avocados", reason: "Harvest when they reach maturity." },
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." },
+                { name: "Strawberries", reason: "Continue harvesting if in a protected environment." }
             ]
         },
         "October": {
             vegetables: [
-                { name: "Beetroot", reason: "Continue harvesting." },
-                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Continue harvesting." },
                 { name: "Brussels sprouts", reason: "Continue harvesting." },
                 { name: "Cabbage", reason: "Harvest heads." },
                 { name: "Carrots", reason: "Continue harvesting." },
-                { name: "Cauliflower", reason: "Harvest heads." },
-                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Cauliflower", reason: "Harvest when compact." },
+                { name: "Garlic", reason: "Harvest as needed." },
                 { name: "Kale", reason: "Harvest leaves." },
-                { name: "Leeks", reason: "Continue harvesting." },
-                { name: "Lettuce", reason: "Harvest cool-season varieties." },
-                { name: "Onions", reason: "Continue harvesting." },
-                { name: "Peas", reason: "Harvest if still producing." },
-                { name: "Radishes", reason: "Harvest as needed." },
-                { name: "Spinach", reason: "Continue harvesting." },
-                { name: "Swiss chard", reason: "Harvest outer leaves." }
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Continue harvesting." },
+                { name: "Onions", reason: "Harvest as needed." },
+                { name: "Peas", reason: "Harvest final crops." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Spinach", reason: "Harvest as needed." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." },
+                { name: "Sweetcorn", reason: "Harvest when kernels are full and milky." },
+                { name: "Tomatoes", reason: "Harvest as they ripen." },
+                { name: "Aubergine (Eggplant)", reason: "Harvest when firm." },
+                { name: "Bell peppers", reason: "Harvest when ripe." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Avocados", reason: "Continue harvesting." },
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." },
+                { name: "Strawberries", reason: "Continue harvesting." },
+                { name: "Grapes", reason: "Harvest when fully ripe." }
             ]
         },
         "November": {
             vegetables: [
-                { name: "Beetroot", reason: "Continue harvesting." },
-                { name: "Broccoli", reason: "Harvest heads." },
-                { name: "Brussels sprouts", reason: "Continue harvesting." },
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Continue harvesting." },
+                { name: "Brussels sprouts", reason: "Harvest as they mature." },
                 { name: "Cabbage", reason: "Harvest heads." },
                 { name: "Carrots", reason: "Continue harvesting." },
-                { name: "Cauliflower", reason: "Harvest heads." },
-                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Cauliflower", reason: "Harvest when compact." },
+                { name: "Garlic", reason: "Harvest as needed." },
                 { name: "Kale", reason: "Harvest leaves." },
-                { name: "Leeks", reason: "Continue harvesting." },
-                { name: "Lettuce", reason: "Harvest cool-season varieties." },
-                { name: "Onions", reason: "Continue harvesting." },
-                { name: "Peas", reason: "Harvest if still producing." },
-                { name: "Radishes", reason: "Harvest as needed." },
-                { name: "Spinach", reason: "Continue harvesting." },
-                { name: "Swiss chard", reason: "Harvest outer leaves." }
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Continue harvesting." },
+                { name: "Onions", reason: "Harvest as needed." },
+                { name: "Peas", reason: "Harvest as final crops." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Spinach", reason: "Harvest as needed." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." },
+                { name: "Potatoes", reason: "Harvest as needed." }
             ],
             fruits: [
-                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+                { name: "Avocados", reason: "Continue harvesting." },
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." },
+                { name: "Grapes", reason: "Harvest when ripe." },
+                { name: "Melons (Watermelon, Cantaloupe)", reason: "Harvest when fully ripe." },
+                { name: "Strawberries", reason: "Continue harvesting." }
             ]
         },
         "December": {
