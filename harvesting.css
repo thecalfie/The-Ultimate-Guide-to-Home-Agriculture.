@@ -189,3 +189,22 @@ td{
 tr{
     color: white;
 }
+
+.produce{
+    margin-bottom: 10px;
+    transition: scale 0.4s ease, color 0.1s ease forwards;
+    padding-left: 30px;
+    padding-top: 10px;
+    border-radius: 50px;
+    padding-bottom: 0px;
+    align-content: center;
+}
+
+
+.produce:hover{
+    box-shadow: 3px 3px rgba(22,22,22, 0.1);
+    transform: scale(1.03);
+    background: rgba(0,100,20,0.5);
+    color: white;
+    text-align: center;
+}

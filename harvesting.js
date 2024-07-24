@@ -1,218 +1,238 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let currentMonthIndex = new Date().getMonth();
+    const currentMonthElement = document.getElementById("currentMonth");
+    const plantingGuideElement = document.getElementById("plantingGuide");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    const harvestingGuide = {
-        "January": {
-            vegetables: [
-                "Beans (Green beans)", "Beetroot", "Broccoli", "Cabbage", "Carrots", "Cauliflower",
-                "Cucumbers", "Lettuce", "Radishes", "Spinach", "Sweetcorn", "Swiss chard", "Tomatoes"
-            ],
-            fruits: ["Melons (Watermelon, Cantaloupe)", "Pineapples", "Strawberries"]
-        },
-        "February": {
-            vegetables: [
-                "Beans (Green beans)", "Beetroot", "Broccoli", "Carrots", "Cauliflower", "Cucumbers",
-                "Lettuce", "Peppers (Bell peppers, Chillies)", "Pumpkins", "Radishes", "Spinach",
-                "Sweetcorn", "Swiss chard", "Tomatoes"
-            ],
-            fruits: ["Melons (Watermelon, Cantaloupe)", "Pineapples", "Strawberries"]
-        },
-        "March": {
-            vegetables: [
-                "Beans (Green beans)", "Beetroot", "Broccoli", "Carrots", "Cauliflower", "Cucumbers",
-                "Lettuce", "Peppers (Bell peppers, Chillies)", "Pumpkins", "Radishes", "Spinach",
-                "Sweetcorn", "Swiss chard", "Tomatoes"
-            ],
-            fruits: ["Melons (Watermelon, Cantaloupe)", "Pineapples", "Strawberries"]
-        },
+    const HarvestListUpdated = {
+        "January": { vegetables: [], fruits: [] },
+        "February": { vegetables: [], fruits: [] },
+        "March": { vegetables: [], fruits: [] },
         "April": {
             vegetables: [
-                "Beetroot", "Broccoli", "Carrots", "Cauliflower", "Garlic", "Kale", "Leeks", "Lettuce",
-                "Peppers (Bell peppers, Chillies)", "Potatoes", "Radishes", "Spinach", "Swiss chard",
-                "Tomatoes"
+                { name: "Asparagus", reason: "Harvest the spears before they become too tall." },
+                { name: "Lettuce", reason: "Harvest leaves before they become too mature." }
             ],
-            fruits: ["Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "May": {
             vegetables: [
-                "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots", "Cauliflower",
-                "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Potatoes", "Radishes",
-                "Spinach", "Swiss chard"
+                { name: "Asparagus", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Continue harvesting." }
             ],
-            fruits: ["Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "June": {
             vegetables: [
-                "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots", "Cauliflower",
-                "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Radishes", "Spinach",
-                "Swiss chard"
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Brussels sprouts", reason: "Harvest as needed." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Harvest as needed." },
+                { name: "Cauliflower", reason: "Harvest heads." },
+                { name: "Garlic", reason: "Harvest when bulbs are mature." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Harvest as needed." },
+                { name: "Lettuce", reason: "Harvest leaves." },
+                { name: "Onions", reason: "Harvest bulbs." },
+                { name: "Peas", reason: "Harvest pods." },
+                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Spinach", reason: "Harvest leaves." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Citrus (Oranges, Lemons, Grapefruits)", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "July": {
             vegetables: [
-                "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots", "Cauliflower",
-                "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Radishes", "Spinach",
-                "Swiss chard"
+                { name: "Beetroot", reason: "Harvest as needed." },
+                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Brussels sprouts", reason: "Harvest as needed." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Harvest as needed." },
+                { name: "Cauliflower", reason: "Harvest heads." },
+                { name: "Garlic", reason: "Harvest when bulbs are mature." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Harvest as needed." },
+                { name: "Lettuce", reason: "Harvest leaves." },
+                { name: "Onions", reason: "Harvest bulbs." },
+                { name: "Peas", reason: "Harvest pods." },
+                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Spinach", reason: "Harvest leaves." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Citrus (Oranges, Lemons, Grapefruits)", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "August": {
             vegetables: [
-                "Asparagus", "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots",
-                "Cauliflower", "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Radishes",
-                "Spinach", "Swiss chard"
+                { name: "Beetroot", reason: "Harvest as they mature." },
+                { name: "Broccoli", reason: "Continue harvesting." },
+                { name: "Brussels sprouts", reason: "Harvest as needed." },
+                { name: "Cabbage", reason: "Continue harvesting heads." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest when heads are tight." },
+                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Kale", reason: "Harvest leaves as needed." },
+                { name: "Leeks", reason: "Harvest as they mature." },
+                { name: "Lettuce", reason: "Harvest cool-season varieties." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Harvest if still producing." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Spinach", reason: "Continue harvesting." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Citrus (Oranges, Lemons, Grapefruits)", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "September": {
             vegetables: [
-                "Asparagus", "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots",
-                "Cauliflower", "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Radishes",
-                "Spinach", "Swiss chard"
+                { name: "Beetroot", reason: "Continue harvesting." },
+                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Brussels sprouts", reason: "Continue harvesting." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest heads." },
+                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Harvest cool-season varieties." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Harvest if still producing." },
+                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Spinach", reason: "Continue harvesting." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Avocados", "Citrus (Oranges, Lemons, Grapefruits)", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "October": {
             vegetables: [
-                "Beetroot", "Broccoli", "Brussels sprouts", "Cabbage", "Carrots", "Cauliflower",
-                "Garlic", "Kale", "Leeks", "Lettuce", "Onions", "Peas", "Potatoes", "Radishes",
-                "Spinach", "Swiss chard"
+                { name: "Beetroot", reason: "Continue harvesting." },
+                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Brussels sprouts", reason: "Continue harvesting." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest heads." },
+                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Harvest cool-season varieties." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Harvest if still producing." },
+                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Spinach", reason: "Continue harvesting." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Avocados", "Citrus (Oranges, Lemons, Grapefruits)", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "November": {
             vegetables: [
-                "Beetroot", "Broccoli", "Cabbage", "Carrots", "Cauliflower", "Garlic", "Kale",
-                "Lettuce", "Onions", "Peas", "Potatoes", "Radishes", "Spinach", "Swiss chard"
+                { name: "Beetroot", reason: "Continue harvesting." },
+                { name: "Broccoli", reason: "Harvest heads." },
+                { name: "Brussels sprouts", reason: "Continue harvesting." },
+                { name: "Cabbage", reason: "Harvest heads." },
+                { name: "Carrots", reason: "Continue harvesting." },
+                { name: "Cauliflower", reason: "Harvest heads." },
+                { name: "Garlic", reason: "Harvest if still in ground." },
+                { name: "Kale", reason: "Harvest leaves." },
+                { name: "Leeks", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Harvest cool-season varieties." },
+                { name: "Onions", reason: "Continue harvesting." },
+                { name: "Peas", reason: "Harvest if still producing." },
+                { name: "Radishes", reason: "Harvest as needed." },
+                { name: "Spinach", reason: "Continue harvesting." },
+                { name: "Swiss chard", reason: "Harvest outer leaves." }
             ],
-            fruits: ["Avocados", "Citrus (Oranges, Lemons, Grapefruits)", "Grapes", "Melons (Watermelon, Cantaloupe)", "Strawberries"]
+            fruits: [
+                { name: "Citrus (Oranges, Lemons, Grapefruits)", reason: "Continue harvesting." }
+            ]
         },
         "December": {
             vegetables: [
-                "Beans (Green beans)", "Beetroot", "Broccoli", "Carrots", "Cauliflower", "Cucumbers",
-                "Lettuce", "Peppers (Bell peppers, Chillies)", "Pumpkins", "Radishes", "Spinach",
-                "Sweetcorn", "Swiss chard", "Tomatoes"
+                { name: "Beetroot", reason: "Continue harvesting." },
+                { name: "Carrots", reason: "Harvest when they reach full size." },
+                { name: "Cucumbers", reason: "Continue harvesting." },
+                { name: "Green beans", reason: "Continue harvesting." },
+                { name: "Lettuce", reason: "Harvest as needed." },
+                { name: "Radishes", reason: "Harvest as they mature." },
+                { name: "Swiss chard", reason: "Continue harvesting." },
+                { name: "Tomatoes", reason: "Harvest when ripe." },
+                { name: "Aubergine (Eggplant)", reason: "Continue harvesting." },
+                { name: "Bell peppers", reason: "Continue harvesting." },
+                { name: "Pumpkins", reason: "Harvest when they have reached full size and their skin is hard." },
+                { name: "Marrows", reason: "Harvest when tender and young." },
+                { name: "Sweetcorn", reason: "Harvest when kernels are full and milky." },
+                { name: "Watermelon", reason: "Harvest when ripe." }
             ],
-            fruits: ["Grapes", "Melons (Watermelon, Cantaloupe)", "Pineapples", "Strawberries"]
+            fruits: [
+                { name: "Grapes", reason: "Continue harvesting." },
+                { name: "Melons (Watermelon, Cantaloupe)", reason: "Continue harvesting." },
+                { name: "Pineapples", reason: "Harvest when ripe." },
+                { name: "Strawberries", reason: "Continue harvesting." }
+            ]
         }
     };
 
-    const continueHarvesting = {
-        "January": ["Melons (Watermelon, Cantaloupe)", "Strawberries", "Pineapples"],
-        "February": ["Melons (Watermelon, Cantaloupe)"],
-        "March": ["Melons (Watermelon, Cantaloupe)"],
-        "April": ["Melons (Watermelon, Cantaloupe)"],
-        "May": ["Melons (Watermelon, Cantaloupe)"],
-        "June": ["Melons (Watermelon, Cantaloupe)"],
-        "July": ["Melons (Watermelon, Cantaloupe)"],
-        "August": ["Melons (Watermelon, Cantaloupe)", "Citrus (Oranges, Lemons, Grapefruits)"],
-        "September": ["Melons (Watermelon, Cantaloupe)", "Citrus (Oranges, Lemons, Grapefruits)"],
-        "October": ["Melons (Watermelon, Cantaloupe)", "Citrus (Oranges, Lemons, Grapefruits)", "Strawberries"],
-        "November": ["Citrus (Oranges, Lemons, Grapefruits)", "Strawberries"],
-        "December": ["Citrus (Oranges, Lemons, Grapefruits)", "Strawberries", "Pineapples"]
-    };
+    function updatePlantingGuide() {
+        const monthName = monthNames[currentMonthIndex];
+        currentMonthElement.textContent = monthName;
+        plantingGuideElement.innerHTML = ""; // Clear previous content
+        let itemId = 1;
 
-    let currentMonthIndex = new Date().getMonth();
+        const vegetables = HarvestListUpdated[monthName].vegetables;
+        vegetables.forEach(veg => {
+            const vegDiv = document.createElement("div");
+            vegDiv.id = `item-${itemId}`;
+            vegDiv.className = "produce";
+            const vegName = document.createElement("b");
+            vegName.textContent = veg.name;
+            const vegReason = document.createElement("p");
+            vegReason.textContent = veg.reason;
+            vegDiv.appendChild(vegName);
+            vegDiv.appendChild(vegReason);
+            plantingGuideElement.appendChild(vegDiv);
+            itemId++;
+        });
 
-    const updateGuide = (monthIndex) => {
-        const monthName = monthNames[monthIndex];
-        const monthGuide = harvestingGuide[monthName] || { vegetables: [], fruits: [] };
-        const continueItems = continueHarvesting[monthName] || [];
-
-        document.getElementById('currentMonth').textContent = monthName;
-        const guideContainer = document.getElementById('plantingGuide'); // Keep the ID consistent
-        guideContainer.innerHTML = '';
-
-        // Helper function to create a list of items
-        const createList = (items, highlightItems = []) => {
-            const ul = document.createElement('ul');
-            items.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                if (highlightItems.includes(item)) {
-                    li.classList.add('highlight');
-                }
-                ul.appendChild(li);
-            });
-            return ul;
-        };
-
-        // Create and append vegetable list
-        const vegetables = monthGuide.vegetables.filter(item => !continueItems.includes(item));
-        const vegetablesList = createList(vegetables);
-        const vegetablesHeader = document.createElement('h2');
-        vegetablesHeader.textContent = 'Vegetables';
-        vegetablesHeader.style.fontSize = '1.5em'; // Adjust the font size for h2
-        guideContainer.appendChild(vegetablesHeader
-
-);
-        guideContainer.appendChild(vegetablesList);
-
-        // Create and append fruit list
-        const fruits = monthGuide.fruits;
-        const fruitsList = createList(fruits);
-        const fruitsHeader = document.createElement('h2');
-        fruitsHeader.textContent = 'Fruits';
-        fruitsHeader.style.fontSize = '1.5em'; // Adjust the font size for h2
-        guideContainer.appendChild(fruitsHeader);
-        guideContainer.appendChild(fruitsList);
-
-        // Create and append continue harvesting section
-        if (continueItems.length > 0) {
-            const continueHarvestingContainer = document.createElement('div');
-            continueHarvestingContainer.className = 'continue-planting'; // Use the same class name for consistency
-            
-            const title = document.createElement('h3');
-            title.textContent = 'Continue Harvesting';
-            continueHarvestingContainer.appendChild(title);
-            
-            continueHarvestingContainer.appendChild(createList(continueItems, continueItems));
-            guideContainer.appendChild(continueHarvestingContainer);
-        }
-    };
-
-    updateGuide(currentMonthIndex);
-
-    // Event listeners for changing months
-    document.getElementById('prevMonth').addEventListener('click', () => {
-        currentMonthIndex = (currentMonthIndex - 1 + 12) % 12;
-        updateGuide(currentMonthIndex);
-    });
-
-    document.getElementById('nextMonth').addEventListener('click', () => {
-        currentMonthIndex = (currentMonthIndex + 1) % 12;
-        updateGuide(currentMonthIndex);
-    });
-
-    const movingBox = document.querySelector(".moving-box");
-    const movingContainer = document.querySelector(".moving-container");
-    const containerWidth = movingContainer.offsetWidth;
-    const boxWidth = movingBox.offsetWidth;
-    let direction = 1;
-    let position = 0;
-    let flipped = false;
-
-    function moveBox() {
-        position += direction * 2; // Change the number to control speed
-        movingBox.style.transform = flipped ? "scaleX(1)" : "scaleX(-1)";
-        if (position + boxWidth > containerWidth) {
-            direction = -1;
-            flipped = !flipped;
-            movingBox.style.transform = flipped ? "scaleX(1)" : "scaleX(-1)";
-        } else if (position < 0) {
-            direction = 1;
-            flipped = !flipped;
-            movingBox.style.transform = flipped ? "scaleX(1)" : "scaleX(-1)";
-        }
-
-        movingBox.style.left = position + "px";
-        requestAnimationFrame(moveBox);
+        const fruits = HarvestListUpdated[monthName].fruits;
+        fruits.forEach(fruit => {
+            const fruitDiv = document.createElement("div");
+            fruitDiv.id = `item-${itemId}`;
+            fruitDiv.className = "produce";
+            const fruitName = document.createElement("b");
+            fruitName.textContent = fruit.name;
+            const fruitReason = document.createElement("p");
+            fruitReason.textContent = fruit.reason;
+            fruitDiv.appendChild(fruitName);
+            fruitDiv.appendChild(fruitReason);
+            plantingGuideElement.appendChild(fruitDiv);
+            itemId++;
+        });
     }
 
-    moveBox();
+    function changeMonth(direction) {
+        currentMonthIndex = (currentMonthIndex + direction + 12) % 12;
+        updatePlantingGuide();
+    }
+
+    document.getElementById("prevMonth").addEventListener("click", function() {
+        changeMonth(-1);
+    });
+
+    document.getElementById("nextMonth").addEventListener("click", function() {
+        changeMonth(1);
+    });
+
+    updatePlantingGuide();
 });
