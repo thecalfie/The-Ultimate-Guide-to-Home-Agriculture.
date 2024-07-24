@@ -98,31 +98,28 @@ button:hover {
     color: white;
     height: 50px;
 }
+
 #navguide {
-    position: fixed;
-    float: right;
-    max-width: 800px;
-    padding: 20px;
+    width:100%;
     background-color: rgba(255,255,255,0.9);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 #navguide th {
-    width: 45%;
+    width: 30%;
+    color: black;
 }
 
 #navcont {
-    position: absolute;
-    float: right;
     display: contents;
     justify-content: none;
     margin-left: 0;
     align-items: none;
     z-index: 2;
+    color: black;
     text-align: center;
-    padding: 0;
 }
 
 .moving-container {
@@ -147,7 +144,14 @@ button:hover {
     background-repeat: no-repeat;
     margin-top: 20px;
 }
+table {
+    margin: auto;
+    text-align: center;
+}
 
+th {
+    width: 25%;
+}
 
 ul {
     list-style-type: none; /* Remove default list styling */
