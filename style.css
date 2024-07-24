@@ -1,0 +1,226 @@
+/* Reset some basic elements for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(Images/bodyBG-Garden.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+}
+
+th {
+    width: 25%;
+}
+
+button {
+    height: 50px;
+    background: lime;
+    border-radius: 30px;
+    padding: 4px;
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px grey;
+}
+
+.container {
+    width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h2 {
+    text-align: center;
+    color: #16a085;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.planting-item {
+    margin-bottom: 20px;
+}
+
+.planting-item h3 {
+    color: #e67e22;
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+    transition: transform 0.3s ease, color 0s ease;
+    text-align: left; /* Default text alignment */
+    font-size: 16px; /* Adjust font size for readability */
+    padding: 10px;
+}
+
+li:hover {
+    background: rgba(0,100,20,0.5);
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.continue-planting {
+    background-color: #FFFFE0; /* Pale yellow */
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.continue-planting h3 {
+    margin: 0 0 10px 0;
+    color: #333; /* Darker text for the title */
+    text-align: center;
+}
+
+.continue-planting ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.continue-planting li {
+    margin: 5px 0;
+}
+
+.highlight {
+    background-color: #FFFFE0; /* Pale yellow background for highlighted items */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.moving-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: url(Images/farmyard.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px dashed black;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.moving-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(Images/tractor-farmall-cartoon-clip-art-vector-tractor-7cf3fc38edf1bf3dc6dbebccfe7e39ef.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+
+#navguide {
+    position: fixed;
+    float: right;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+#navguide th {
+    width: 45%;
+}
+
+#navcont {
+    position: absolute;
+    float: right;
+    display: contents;
+    justify-content: none;
+    margin-left: 0;
+    align-items: none;
+    z-index: 2;
+}
+
+/* New styles for planting guide */
+#planting-guide {
+    margin: 20px 0;
+}
+
+.planting-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.planting-content h3 {
+    color: #4CAF50;
+}
+
+.planting-content ul {
+    padding-left: 20px;
+}
+
+.planting-content ul li {
+    margin-bottom: 5px;
+}
+
+#navbox{
+    background: #4CAF50;
+    text-align:center;
+    color: white;
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin:10px;
+}
+
+td{
+   width: 200px;
+    background: white;
+}
+tr{
+    color: white;
+}
+footer {
+    background-color: #4CAF50; /* Matching header background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}

@@ -1,0 +1,187 @@
+/* styles-harvesting.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(Images/bodyBG-Garden.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #4CAF50; /* Matching header background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+#harvesting-guide {
+    margin: 20px 0;
+}
+
+.guide-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.guide-content h3 {
+    color: #4CAF50;
+}
+
+.guide-content ul {
+    padding-left: 20px;
+}
+
+.guide-content ul li {
+    margin-bottom: 5px;
+}
+.container {
+    width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+button {
+    height: 50px;
+    background: lime;
+    border-radius: 30px;
+    padding: 4px;
+    width: 100%;
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px grey;
+}
+
+#navbox{
+    background: #4CAF50;
+    text-align:center;
+    color: white;
+    height: 50px;
+}
+#navguide {
+    position: fixed;
+    float: right;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+#navguide th {
+    width: 45%;
+}
+
+#navcont {
+    position: absolute;
+    float: right;
+    display: contents;
+    justify-content: none;
+    margin-left: 0;
+    align-items: none;
+    z-index: 2;
+    text-align: center;
+    padding: 0;
+}
+
+.moving-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: url(Images/farmyard.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px dashed black;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.moving-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(Images/tractor-farmall-cartoon-clip-art-vector-tractor-7cf3fc38edf1bf3dc6dbebccfe7e39ef.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+    transition: transform 0.3s ease, color 0s ease;
+    text-align: left; /* Default text alignment */
+    font-size: 16px; /* Adjust font size for readability */
+    padding: 10px;
+}
+
+li:hover {
+    background: rgba(0,100,20,0.5);
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin:10px;
+}
+
+td{
+   width: 200px;
+    background: white;
+}
+tr{
+    color: white;
+}
